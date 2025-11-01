@@ -2,10 +2,12 @@ import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import axios from "axios";
+import {useNavigate} from "react-router-dom";
 const Home = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [usertype, setUsertType] = useState("");
+  const navigate = useNavigate();
   
   const handleSubmit=async(e)=>{
      e.preventDefault();
@@ -16,9 +18,12 @@ const Home = () => {
             let api=`${import.meta.env.VITE_BACKEND_URL}/admin/login`; 
             const response = await axios.post(api, {email:email, password:password});
             console.log(response);
+            localStorage.setItem("adminname", response.data.Admin.name);
+            localStorage.setItem("adminemail", response.data.Admin.email );
             alert(response.data.msg);
+            navigate("/admin-dashboard");
+
          } catch (error) {
-          
            console.log(error);
            alert(error.response.data.msg);
          }

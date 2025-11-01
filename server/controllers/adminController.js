@@ -1,4 +1,5 @@
 const AdminModel = require("../models/adminModel");
+const UserPassword= require("../middlewares/randomPassword");
 const adminLogin=async(req, res)=>{
     const { email, password } = req.body;
     try {
@@ -21,6 +22,14 @@ const adminLogin=async(req, res)=>{
 }
 
 
+const userCreate=async(req, res)=>{
+    const {empname,empemail,designation} = req.body;
+    console.log(UserPassword.myPassword());
+    res.send("OKK");
+
+}
+
 module.exports ={
-    adminLogin
+    adminLogin,
+    userCreate
 }
