@@ -13,6 +13,8 @@ const AdminDashBoard=()=>{
           <div id="adminmenu">
             
           <Link to="create-user">Create User</Link>
+          <br /> <br />
+           <Link to="assign-task">Assign Task</Link>
           </div>
           <div id="admincontent">
              <Outlet/>

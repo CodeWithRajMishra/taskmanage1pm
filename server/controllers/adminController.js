@@ -40,7 +40,18 @@ const userCreate = async (req, res) => {
     res.status(201).send("user succesfully created!!!");
 }
 
+const empDisplay=async(req, res)=>{
+      const employee = await EmpModel.find();
+      res.status(200).send(employee);
+}
+
+const taskSave=async(req, res)=>{
+  console.log(req.body);
+  res.send("OKKK");
+}
 module.exports = {
     adminLogin,
-    userCreate
+    userCreate,
+    empDisplay,
+    taskSave
 }
