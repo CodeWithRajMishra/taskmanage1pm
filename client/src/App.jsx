@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import AdminDashBoard from "./admin/AdminDashBoard";
 import CreateUser from "./admin/CreateUser";
 import AssignTask from "./admin/AssignTask";
+import EmpDashBoard from "./pages/EmpDashBoard";
 const App = () => {
   return (
     <>
@@ -21,6 +22,16 @@ const App = () => {
 
           </Route>
         </Routes>
+
+        <Routes>
+          <Route path="emp-dashboard" element={<EmpDashBoard/>}>
+           
+          
+          </Route>
+
+        </Routes>
+
+
       </BrowserRouter>
     </>
   )

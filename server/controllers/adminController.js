@@ -2,7 +2,7 @@ const AdminModel = require("../models/adminModel");
 const UserPassword = require("../middlewares/randomPassword");
 const emailSend = require("../middlewares/empMailSen");
 const EmpModel = require("../models/empModel");
-
+const TaskModel = require("../models/taskModel");
 const adminLogin = async (req, res) => {
     const { email, password } = req.body;
     try {
@@ -40,14 +40,22 @@ const userCreate = async (req, res) => {
     res.status(201).send("user succesfully created!!!");
 }
 
-const empDisplay=async(req, res)=>{
-      const employee = await EmpModel.find();
-      res.status(200).send(employee);
+const empDisplay = async (req, res) => {
+    const employee = await EmpModel.find();
+    res.status(200).send(employee);
 }
 
-const taskSave=async(req, res)=>{
-  console.log(req.body);
-  res.send("OKKK");
+const taskSave = async (req, res) => {
+    const { id, task, duration, priority } = req.body;
+    const emptask = await TaskModel.create({
+        task: task,
+        duration: duration,
+        priority: priority,
+        empid: id
+    })
+
+    res.status(201).send("Task Successfully Created!");
+
 }
 module.exports = {
     adminLogin,
