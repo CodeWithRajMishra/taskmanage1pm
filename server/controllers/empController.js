@@ -1,5 +1,5 @@
 const EmpModel = require("../models/empModel");
-
+const TaskModel= require("../models/taskModel");
 
 const empLogin=async(req, res)=>{
     const { email, password } =req.body;
@@ -18,7 +18,13 @@ const empLogin=async(req, res)=>{
     res.status(200).send({employee:employee, msg:"Login Succesfully!"});
 }
 
+const showTask=async(req, res)=>{
+    const {id} =req.query;
+     const employee= await TaskModel.find({empid:id});
+     res.status(200).send(employee);
+}
 
 module.exports={
-    empLogin
+    empLogin,
+    showTask
 }

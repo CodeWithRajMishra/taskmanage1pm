@@ -79,3 +79,37 @@ h1
     width: 85%;
     padding: 20px;
 }
+
+#empheader
+{
+    width: 100%;
+    background-color: lightskyblue;
+    padding: 20px;
+    color: maroon;
+    text-align: center;
+}
+#empcontent
+{
+    display: flex;
+    justify-content: space-between;
+  
+   
+}
+#empmenu{
+  width: 15%;
+   background-color: rgb(89, 122, 89);
+    color: white;
+    padding: 20px;
+}
+#empdata
+{
+    width: 85%;
+    padding: 20px;
+}
+.empmenu
+{
+    color: white;
+    text-decoration: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+}

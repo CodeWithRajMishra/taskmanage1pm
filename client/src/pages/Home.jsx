@@ -34,12 +34,12 @@ const Home = () => {
                      let api=`${import.meta.env.VITE_BACKEND_URL}/employee/login`; 
                const response = await axios.post(api, {email:email, password:password} );
                
-            
-
                console.log(response.data.employee.name);
                localStorage.setItem("empname", response.data.employee.name);
                 localStorage.setItem("empemail", response.data.employee.email);
                  localStorage.setItem("empdesignation", response.data.employee.designation);
+                   localStorage.setItem("empid", response.data.employee._id);
+
                  navigate("/emp-dashboard");
 
         } catch (error) {
