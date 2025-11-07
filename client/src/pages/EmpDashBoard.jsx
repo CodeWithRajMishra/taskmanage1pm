@@ -13,7 +13,7 @@ const EmpDashBoard=()=>{
                <br /><br />
                 <Link to="mytask" className="empmenu">My Taks</Link>
                <br /><br />
-                <Link to="mytask" className="empmenu">My Taks</Link>
+                <Link to="submitedtask" className="empmenu">Submited Taks</Link>
                <br /><br />
             
              </div>

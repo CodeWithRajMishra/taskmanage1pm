@@ -15,6 +15,8 @@ const AdminDashBoard=()=>{
           <Link to="create-user">Create User</Link>
           <br /> <br />
            <Link to="assign-task">Assign Task</Link>
+            <br /> <br />
+           <Link to="see-reports">See Reports</Link>
           </div>
           <div id="admincontent">
              <Outlet/>
